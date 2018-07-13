@@ -1,0 +1,37 @@
+.mys{
+    
+    background-color: rgba(236, 58, 14, 0.842);
+    border: 5px solid black;
+}
+
+.logs{
+    background-color: rgba(236, 58, 14, 0.842);
+    border: 2px solid black;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.backa{
+
+    background-image: url('../images/bg-07.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+ 
+.logs2{
+    background-color: rgba(10, 10, 10, 0.842);
+    border: 2px solid black;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

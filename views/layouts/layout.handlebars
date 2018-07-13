@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+    PEPPER
+    </title>
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="backa">
+    
+	<div >
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            {{#if user}}
+            <li role="presentation"><a href="/" style="color:white; font-size:20px;">Home</a></li>
+              <li role="presentation"><a href="/imagefile/mn"style="color:white; font-size:20px;">Profile</a></li>
+              <li role="presentation"><a href="/users/logout" style="color:white; font-size:20px;">Logout</a></li>
+            {{else}}
+              <li role="presentation"><a href="/users/login" style="color:white; font-size:20px;">Login</a></li>
+              <li role="presentation"><a href="/users/register" style="color:white; font-size:20px;">Didn't have an account?</a></li>
+            {{/if}}
+          </ul>
+        </nav>
+        <img src="/images/logo.jpg" style="height:100px; width:100px;">  
+       <!--<h4 style="font-size:40px; color:white; font-family:sans-serif">PEPPER</h4>-->
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          {{{body}}}
+        </div>
+
+        
+      </div>
+
+     
+    </div> <!-- /container -->
+</div>  <!--full back--->        
+</body>
+</html>
