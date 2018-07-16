@@ -76,7 +76,7 @@ passport.use(new LocalStrategy(
 		User.getUserByUsername(username, function (err, user) {
 			if (err) throw err;
 			if (!user) {
-				return done(null, false, { message: 'Unknown User' });
+				return done(null, false, { message: 'Unknown User, PLease register first to login' });
 			}
 
 			User.comparePassword(password, user.password, function (err, isMatch) {
@@ -84,7 +84,7 @@ passport.use(new LocalStrategy(
 				if (isMatch) {
 					return done(null, user);
 				} else {
-					return done(null, false, { message: 'Invalid password' });
+					return done(null, false, { message: 'Oops! wrong password' });
 				}
 			});
 		});
@@ -116,18 +116,28 @@ router.get('/logout', function (req, res) {
 
 
 //aboutus
-router.get('/aboutus', function (req, res) {
+router.get('/aboutus',ensureAuthenticated, function (req, res) {
 	res.render('aboutus');
 });
 
 //privacy policy
-router.get('/pp', function (req, res) {
+router.get('/pp', ensureAuthenticated, function (req, res) {
 	res.render('privacypol');
 });
 
 //terms and conditions
-router.get('/t&c', function (req, res) {
+router.get('/t&c', ensureAuthenticated, function (req, res) {
 	res.render('t&c');
 });
+
+function ensureAuthenticated(req, res, next){
+	if(req.isAuthenticated()){
+		return next();
+	} else {
+		req.flash('error_msg','You are not logged in');
+		res.redirect('/users/login');
+	}
+}          
+
 
 module.exports = router;
