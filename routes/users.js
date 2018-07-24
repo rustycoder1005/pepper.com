@@ -4,7 +4,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
-
+var Rest = require('../models/resturant');
 // Register
 router.get('/register', function (req, res) {
 	res.render('register');
@@ -138,6 +138,50 @@ function ensureAuthenticated(req, res, next){
 		res.redirect('/users/login');
 	}
 }          
+
+
+//register resturant
+
+router.post('/resturant', function (req, res) {
+	var name = req.body.name;
+	var email = req.body.email;
+    var country = req.body.country;
+    var phone = req.body.phone;
+    var type = req.body.type;
+
+	// Validation
+	req.checkBody('name', 'Name is required').notEmpty();
+	req.checkBody('email', 'Email is required').notEmpty();
+	req.checkBody('phone', 'Phoneno is required').notEmpty();
+	req.checkBody('country', 'Country is required').notEmpty();
+	req.checkBody('type', 'Message is required').notEmpty();
+
+	var errors = req.validationErrors();
+
+	if (errors) {
+		res.render('resturant', {                    //dont forget to put in contact.handlebars
+			errors: errors
+		});
+	}
+	
+				else {
+					var newRest = new Rest({
+						name: name,
+						email: email,
+						country: country,
+                        phone: phone,
+                        type: type
+					});
+					//console.log("user model is : ",ContModel);
+					Rest.createRest(newRest, function (err, rest) {
+						if (err) throw err;
+						console.log(rest);
+					});
+         	req.flash('success_msg', 'your message has been submitted we will reply ASAP :-)');
+					res.redirect('/resturant');
+				}
+			});
+			
 
 
 module.exports = router;

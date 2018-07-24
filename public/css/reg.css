@@ -26,6 +26,15 @@ body, html {
     height: 100%;
     margin: 0;
 }
+
+.r1{
+    background-color: rgba(10, 10, 10, 0.842);
+    border: 2px solid black;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
  
 .logs2{
     background-color: rgba(10, 10, 10, 0.842);
