@@ -47,7 +47,7 @@ body, html {
 
 .deli{
      position:relative; 
-     background-color:rgb(241, 179, 97);
+     background-color:rgb(250, 131, 110);
      border:5px solid rgb(97, 5, 20); 
      color:black; 
      font-size:40px; 
@@ -63,3 +63,23 @@ padding-right:2px;
 padding-top:0px;
 padding-bottom:0px;
 }
+
+
+   .prof{
+    position: relative;
+    top:200px;
+
+    color:black;
+    font-size:20px; 
+    padding-left: 500px;
+    padding-right: 600px;
+   }
+
+   .profb{ 
+       padding-left: 50px;
+       padding-top:20px;
+       padding-bottom: 20px;
+    background-color:rgb(250, 131, 110);
+    border: solid 5px black;
+    
+   }

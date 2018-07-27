@@ -26,6 +26,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var employees = require('./routes/employees');
 var imagefile = require('./routes/imagefile');
+var order = require('./routes/order');
 
 
 // Init App
@@ -92,7 +93,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/employees', employees);
 app.use('/imagefile', imagefile);
- 
+app.use('/order' , order);
 
 
 // Set Port

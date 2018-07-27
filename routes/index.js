@@ -26,7 +26,6 @@ router.get('/image', ensureAuthenticated, function (req, res) {
 // Contact us
 
 var Cont  = require('../models/cont');
-var UserModel = require("../models/user")
 router.post('/contact', function (req, res) {
 	var name = req.body.name;
 	var email = req.body.email;
