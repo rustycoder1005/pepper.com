@@ -1,13 +1,13 @@
 {
-  "name": "loginapp",
+  "name": "pepper",
   "version": "1.0.0",
-  "description": "Simple authentication system",
+  "description": "pepper",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brad Traversy",
+  "author": "SANDEEP ARORA",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "*",
@@ -31,3 +31,4 @@
     "nodemon": "^1.17.5"
   }
 }
+ 

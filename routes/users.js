@@ -63,8 +63,8 @@ router.post('/register', function (req, res) {
 						if (err) throw err;
 						console.log(user);
 					});
-         	req.flash('success_msg', 'You are registered and can now login');
 					res.redirect('/users/login');
+					req.flash('success_msg', 'You are registered and can now login');
 				}
 			});
 		});
