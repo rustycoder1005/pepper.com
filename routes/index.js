@@ -38,7 +38,11 @@ router.post('/contact', function (req, res) {
 	req.checkBody('email', 'Email is required').notEmpty();
 	req.checkBody('phone', 'Phoneno is required').notEmpty();
 	req.checkBody('country', 'Country is required').notEmpty();
-	req.checkBody('message', 'Message is required').notEmpty();
+	req.checkBody(
+		
+		
+		
+		'message', 'Message is required').notEmpty();
 
 	var errors = req.validationErrors();
 
@@ -73,7 +77,7 @@ function ensureAuthenticated(req, res, next){
 	if(req.isAuthenticated()){
 		return next();
 	} else {
-		req.flash('error_msg','You are not logged in');
+		//req.flash('error_msg','You are not logged in');
 		res.redirect('/users/login');
 	}
 }          

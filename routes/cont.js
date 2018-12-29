@@ -19,6 +19,7 @@ router.post('/contact', function (req, res) {
     var message = req.body.message;
 
 	// Validation
+	
 	req.checkBody('name', 'Name is required').notEmpty();
 	req.checkBody('email', 'Email is required').notEmpty();
 	req.checkBody('phone', 'Phoneno is required').notEmpty();
