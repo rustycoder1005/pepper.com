@@ -114,7 +114,6 @@ router.get('/logout', function (req, res) {
 	res.redirect('/users/login');
 });
 
-
 //aboutus
 router.get('/aboutus',ensureAuthenticated, function (req, res) {
 	res.render('aboutus');
@@ -129,6 +128,18 @@ router.get('/pp', ensureAuthenticated, function (req, res) {
 router.get('/t&c', ensureAuthenticated, function (req, res) {
 	res.render('t&c');
 });
+
+// profile
+router.get('/profile',function(req,res){
+	User.findOne({_id: req.params.id}).exec(function (err, data) {
+	  if (err) {
+		console.log("Error:", err);
+	  }
+	  else {
+		res.render("../views/profile/profile", {userprofile: data});
+	  }
+	});
+  });
 
 function ensureAuthenticated(req, res, next){
 	if(req.isAuthenticated()){
@@ -182,6 +193,4 @@ router.post('/resturant', function (req, res) {
 				}
 			});
 			
-
-
 module.exports = router;

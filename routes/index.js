@@ -38,11 +38,7 @@ router.post('/contact', function (req, res) {
 	req.checkBody('email', 'Email is required').notEmpty();
 	req.checkBody('phone', 'Phoneno is required').notEmpty();
 	req.checkBody('country', 'Country is required').notEmpty();
-	req.checkBody(
-		
-		
-		
-		'message', 'Message is required').notEmpty();
+	req.checkBody('message', 'Message is required').notEmpty();
 
 	var errors = req.validationErrors();
 
